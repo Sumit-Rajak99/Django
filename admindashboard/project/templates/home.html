@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+
+HOME
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1>Grow Your Business With Smart IT Solutions</h1>
+        <p>We deliver innovative, secure, and scalable digital solutions to help businesses succeed.</p>
+        <a href="#services" class="btn btn-light btn-lg me-2">Get Started</a>
+        <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://media.istockphoto.com/id/1058262630/vector/creation-responsive-internet-website-for-multiple-platforms-building-mobile-interface-on.jpg?s=612x612&w=0&k=20&c=BwGASPtAVnQu9_l-g7R-jW9gRxCQsmSMtRsA-jDPQz0=" alt="hero image" class="section-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">We offer complete IT solutions to grow your business.</p>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="service-card"><img src="https://fiverr-res.cloudinary.com/image/upload/w_880/f_auto,q_auto/v1/attachments/generic_asset/asset/767bc10a0c44b0a67be1a94aea270205-1609336032121/website%20development-min.jpg" class="section-image"><h5>Web Development</h5><p>High-quality websites and web applications.</p></div></div>
+      <div class="col-md-4"><div class="service-card"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20250607112207275971/What-is-Mobile-App-Development-Process__.webp" class="section-image"><h5>Mobile App Development</h5><p>Android & iOS custom mobile solutions.</p></div></div>
+      <div class="col-md-4"><div class="service-card"><img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg" class="section-image"><h5>UI / UX Design</h5><p>Creative and user-friendly design.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Innovation Section -->
+<section class="innovation-section">
+  <div class="container">
+    <h2>Innovation & Technology Leadership</h2>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4r71y8qrhBLduv8105V206mWcKpi3rBqNgA&s" class="section-image" alt="innovation">
+    <p>We adopt emerging technologies to deliver scalable, secure, and future-ready solutions.</p>
+    <ul class="feature-list">
+      <li>AI & Machine Learning Solutions</li>
+      <li>Cloud Infrastructure & DevOps Automation</li>
+      <li>Cyber Security & Data Protection</li>
+      <li>Enterprise Software Architecture</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Development Process -->
+<section class="process-section bg-light">
+  <div class="container">
+    <h2>Our Development Process</h2>
+    <div class="process-grid">
+      <div class="process-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQnkes-ZgB9xsTGmbDgxzluewdu_BSgvyaaw&s" class="section-image"><h4>1. Requirement Analysis</h4><p>Understanding your business goals.</p></div>
+      <div class="process-card"><img src="https://img.freepik.com/premium-vector/gradient-ui-ux-design-illustration_23-2151514787.jpg?semt=ais_hybrid&w=740&q=80" class="section-image"><h4>2. UI/UX & Architecture</h4><p>Designing scalable and user-friendly systems.</p></div>
+      <div class="process-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYa1AZfcAKNjXQ004g6D4wmFLLHpGVMIbxmQ&s" class="section-image"><h4>5. Deployment & Support</h4><p>Smooth deployment with maintenance support.</p></div>
+      <div class="process-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRceeyRNLGISKcnfPN8RH38ZVg_wybD9M8RhQ&s" class="section-image"><h4>3. Agile Development</h4><p>Iterative development with client feedback.</p></div>
+      <div class="process-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAL0QbayYR3xVunz5bh3-kJAYtLDoJMn6TlQ&s" class="section-image"><h4>4. Testing & QA</h4><p>Ensuring high performance and security.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Served -->
+<section class="industry-section">
+  <div class="container">
+    <h2>Industries We Serve</h2>
+    <div class="industry-grid">
+      <div class="industry-card"><img src="https://www.opentext.com/assets/images/products-solutions/solution-industry-category/opentext-image-ov-healthcare-en.jpg" class="section-image">Healthcare & Medical</div>
+      <div class="industry-card"><img src="https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?semt=ais_hybrid&w=740&q=80" class="section-image">Education & E-Learning</div>
+      <div class="industry-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OyUMCBO3BiJm7eaDyifYRa-TdONO_etnriBU2qGzIw&s&ec=121507520" class="section-image">Finance & FinTech</div>
+      <div class="industry-card"><img src="https://media.istockphoto.com/id/637372676/photo/internet-shopping-and-e-commerce-package-delivery-concept.jpg?s=612x612&w=0&k=20&c=Vc4k3vuPSY6BHVN865giYGgghvz3i3WDTgaLWFMjEd0=" class="section-image">E-Commerce & Retail</div>
+      <div class="industry-card"><img src="https://media.istockphoto.com/id/2143490032/photo/modern-manufacturing-plant-with-advanced-robotic-arms-operating-on-an-assembly-line-with.jpg?s=612x612&w=0&k=20&c=pYSDAKAyTzuURDptDyXRQsOBlcQLwU_PueNsD5LISv8=" class="section-image">Manufacturing & Logistics</div>
+      <div class="industry-card"><img src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?cs=srgb&dl=pexels-davidmcbee-1546168.jpg&fm=jpg" class="section-image">Real Estate & Construction</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Let’s Build Something Great Together</h2>
+    <p>Partner with SID Solution to transform your ideas into powerful digital products.</p>
+    <a href="#services">Explore Our Services</a>
+  </div>
+</section>
+
+
+{% endblock content %}
+{% block js %}
+
+{% endblock js %}
