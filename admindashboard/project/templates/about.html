@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+About 
+{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>About SID Solution</h1>
+    <p>We are a trusted IT partner delivering innovative digital solutions worldwide.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6 about-img">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" class="img-fluid" alt="team">
+      </div>
+      <div class="col-md-6">
+        <h2>Who We Are</h2>
+        <p>SID Solution is a professional IT services company providing web development, mobile app development, UI/UX design, cloud solutions, and digital transformation services. We help businesses grow through innovative technology.</p>
+        <p>Our team consists of skilled developers, designers, and consultants committed to delivering high-quality, secure, and scalable solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Vision -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Our Mission & Vision</h2>
+    <p class="section-subtitle">Driving business success through innovation and technology.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="mission-box">
+          <h5>Our Mission</h5>
+          <p>To deliver world-class IT solutions that empower businesses to achieve digital excellence.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mission-box">
+          <h5>Our Vision</h5>
+          <p>To become a globally recognized IT solutions provider known for innovation, quality, and trust.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">Principles that guide our work and culture.</p>
+
+    <div class="row g-4">
+      <div class="col-md-3"><div class="value-box">✔ Integrity & Transparency</div></div>
+      <div class="col-md-3"><div class="value-box">✔ Innovation & Excellence</div></div>
+      <div class="col-md-3"><div class="value-box">✔ Client Satisfaction</div></div>
+      <div class="col-md-3"><div class="value-box">✔ Continuous Learning</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Counter -->
+<section class="counter">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3"><h3 class="count" data-target="120">120+</h3><p>Projects</p></div>
+      <div class="col-md-3"><h3 class="count" data-target="85">85+</h3><p>Clients</p></div>
+      <div class="col-md-3"><h3 class="count" data-target="10">10+</h3><p>Team</p></div>
+      <div class="col-md-3"><h3 class="count" data-target="5">5+</h3><p>Years</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Meet Our Team</h2>
+    <p class="section-subtitle">Passionate professionals behind our success.</p>
+
+    <div class="row g-4 text-center">
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEV52zqlFLyBlL09YIZwwzO5LSg7QZzdcJg&s" class="team-img">
+          <h6>Sumit Rajak</h6>
+          <p>Founder & CEO</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="team-img">
+          <h6>Anjali Verma</h6>
+          <p>UI/UX Lead</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="https://randomuser.me/api/portraits/men/54.jpg" class="team-img">
+          <h6>Rahul Mehta</h6>
+          <p>Senior Developer</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="team-box">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" class="team-img">
+          <h6>Pooja Singh</h6>
+          <p>Project Manager</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Journey -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Our Journey</h2>
+    <p class="section-subtitle">Milestones that define our growth and success.</p>
+
+    <div class="row g-4">
+      <div class="col-md-3"><div class="value-box"><h6>2020</h6><p>Company founded with a small passionate team.</p></div></div>
+      <div class="col-md-3"><div class="value-box"><h6>2021</h6><p>Delivered 30+ projects and expanded services.</p></div></div>
+      <div class="col-md-3"><div class="value-box"><h6>2023</h6><p>Started enterprise and cloud-based solutions.</p></div></div>
+      <div class="col-md-3"><div class="value-box"><h6>2025</h6><p>Serving clients globally with 100+ projects.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Testimonials -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-subtitle">Trusted by startups and enterprises worldwide.</p>
+
+    <div class="row g-4">
+      <div class="col-md-4"><div class="mission-box"><p>"SID Solution delivered our project on time with exceptional quality."</p><strong>- Raj Patel, Startup Founder</strong></div></div>
+      <div class="col-md-4"><div class="mission-box"><p>"Professional team, clear communication, and great results."</p><strong>- Neha Gupta, Marketing Head</strong></div></div>
+      <div class="col-md-4"><div class="mission-box"><p>"Best IT partner for scalable and secure solutions."</p><strong>- Aman Verma, CTO</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Quick answers to common questions.</p>
+
+    <div class="accordion" id="faq">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">What services do you provide?</button></h2>
+        <div id="q1" class="accordion-collapse collapse show"><div class="accordion-body">We provide web development, app development, UI/UX, cloud solutions, and cyber security.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">Do you provide support after project delivery?</button></h2>
+        <div id="q2" class="accordion-collapse collapse"><div class="accordion-body">Yes, we provide complete maintenance and support services.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">How can I start a project?</button></h2>
+        <div id="q3" class="accordion-collapse collapse"><div class="accordion-body">Simply contact us using our contact form or call our support team.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Want to Work With Us?</h2>
+    <p class="mb-4">Let's build something innovative together.</p>
+    <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}
+
+
