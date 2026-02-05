@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Query
+
+{% endblock title %}
+{% block css %}
+
+{% endblock css %}
+{% block content %}
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow">
+        <div class="card-header bg-dark text-white text-center">
+          <h5>Query Reply Form</h5>
+        </div>
+
+        <div class="card-body">
+          <form action="{% url 'ad_reply' pk=data1.id % }" method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" value="{{ data1.Name }}" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" value="{{ data1.Email}}" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Department</label>
+              <input type="text" class="form-control" name="department" value="{{ data1.Department}}" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Query</label>
+              <textarea class="form-control" name="query" rows="2" value="{{ data1.Query}}" readonly>{{data1.Query}}</textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Status</label>
+              <input type="text" class="form-control" name="status" value="{{ data1.Status}}" readonly>
+              
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Admin Reply</label>
+              <textarea class="form-control" name="admin_reply" rows="3" placeholder="Enter reply"></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+{% block js %}
+
+{% endblock js %}
+
+

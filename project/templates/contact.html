@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}contact{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you. Let's start your project today.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Fill the form below or contact us using the information provided.</p>
+
+    <div class="row g-4">
+
+      <div class="col-md-7">
+        <div class="contact-card">
+          <h5 class="mb-3">Send Us a Message</h5>
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="col-md-12 mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          <div id="successMsg" class="alert alert-success mt-3 d-none">Message sent successfully!</div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="contact-info">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded mb-3" alt="office">
+          <h5>Contact Information</h5>
+          <p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
+          <p><strong>Email:</strong> info@sidsolution.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <p><strong>Working Hours:</strong> Mon - Sat, 10:00 AM - 7:00 PM</p>
+
+          <hr>
+
+          <h6>Follow Us</h6>
+          <p>LinkedIn | Facebook | Instagram | Twitter</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Support Options -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-6"><img src="https://thumbs.dreamstime.com/b/team-teamwork-goals-strategy-vision-business-support-concept-50274164.jpg" class="img-fluid rounded" height="70vh"></div>
+      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Support Options -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Other Ways to Reach Us</h2>
+    <p class="section-subtitle">Choose the most convenient way to connect with our team.</p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="contact-card text-center">
+          <h5>Sales Inquiry</h5>
+          <p>sales@sidsolution.com</p>
+          <p>+91 90000 11111</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-card text-center">
+          <h5>Technical Support</h5>
+          <p>support@sidsolution.com</p>
+          <p>+91 90000 22222</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-card text-center">
+          <h5>HR & Careers</h5>
+          <p>hr@sidsolution.com</p>
+          <p>+91 90000 33333</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Branch Offices -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Our Offices</h2>
+    <p class="section-subtitle">We are expanding across major cities.</p>
+
+    <div class="row g-4">
+      <div class="col-md-3"><div class="contact-card">Bhopal (HQ)</div></div>
+      <div class="col-md-3"><div class="contact-card">Indore</div></div>
+      <div class="col-md-3"><div class="contact-card">Delhi</div></div>
+      <div class="col-md-3"><div class="contact-card">Mumbai</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Quick answers to common queries.</p>
+
+    <div class="accordion" id="faq">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">How soon will you respond?</button></h2>
+        <div id="c1" class="accordion-collapse collapse show"><div class="accordion-body">We usually respond within 24 working hours.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2">Do you provide free consultation?</button></h2>
+        <div id="c2" class="accordion-collapse collapse"><div class="accordion-body">Yes, we provide free initial consultation.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3">Can I visit your office?</button></h2>
+        <div id="c3" class="accordion-collapse collapse"><div class="accordion-body">Yes, office visits are welcome with prior appointment.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="pb-5">
+  <div class="container">
+    <div class="map-box">
+      <iframe src="https://maps.google.com/maps?q=bhopal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Business Hours & Support Policy -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Business Hours & Support Policy</h2>
+    <p class="section-subtitle">We ensure fast response and reliable customer support.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="contact-card">
+          <h5>Working Hours</h5>
+          <p>Monday – Saturday: <strong>10:00 AM – 7:00 PM</strong></p>
+          <p>Sunday: <strong>Closed</strong></p>
+          <p>Emergency Support: <strong>24/7 Available</strong></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-card">
+          <h5>Support Policy</h5>
+          <p>• Fast response within 24 working hours</p>
+          <p>• Dedicated technical support team</p>
+          <p>• Priority handling for enterprise clients</p>
+          <p>• Secure and confidential communication</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Subscribe to Our Newsletter</h2>
+    <p class="section-subtitle">Get updates about new services, offers, and tech insights.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="contact-card text-center">
+          <input type="email" class="form-control mb-3" placeholder="Enter your email">
+          <button class="btn btn-primary">Subscribe Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+{% block js %}
+
+
+{% endblock js %}
+
+

@@ -1,0 +1,33 @@
+body{
+    font-family:'Poppins',sans-serif;
+}
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
+    background-size:cover;
+    display:flex;
+    align-items:center;
+}
+.navbar{
+    background:#0a1f44!important;
+}
+.section-title{
+    font-weight:700;
+}
+.service-card{
+    transition:.4s;
+}
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+.project-img{
+    height:200px;
+    object-fit:cover;
+}
+.team-img{
+    width:130px;
+    height:130px;
+    object-fit:cover;
+}

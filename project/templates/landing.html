@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Landing
+{% endblock title %}
+
+{% block css %}
+  <!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+{% endblock css %}
+
+{% block content %}
+<!-- Hero -->
+<section id="home" class="hero text-white text-center">
+<div class="container">
+<h1 data-aos="fade-up" class="display-4 fw-bold">Enterprise IT Solutions for Business Growth</h1>
+<p data-aos="fade-up" data-aos-delay="200" class="lead">Innovative Technology • Secure Systems • Scalable Solutions</p>
+<a data-aos="zoom-in" data-aos-delay="400" class="btn btn-primary btn-lg">Request Consultation</a>
+</div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-6" data-aos="fade-right">
+<h2 class="section-title">About SID Solution</h2>
+<p>
+SID Solution is a global IT services firm delivering enterprise-grade software,
+cloud infrastructure, cybersecurity solutions and digital transformation services.
+We help businesses modernize, automate and scale efficiently.
+</p>
+<ul>
+<li>✔ 10+ Years Industry Experience</li>
+<li>✔ 500+ Successful Deployments</li>
+<li>✔ 150+ Global Clients</li>
+<li>✔ Certified IT Engineers</li>
+</ul>
+</div>
+<div class="col-md-6" data-aos="fade-left">
+<img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837" class="img-fluid rounded shadow">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="bg-primary text-white py-5">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-3" data-aos="zoom-in"><h2>500+</h2><p>Projects</p></div>
+<div class="col-md-3" data-aos="zoom-in"><h2>150+</h2><p>Clients</p></div>
+<div class="col-md-3" data-aos="zoom-in"><h2>10+</h2><p>Years</p></div>
+<div class="col-md-3" data-aos="zoom-in"><h2>40+</h2><p>Experts</p></div>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-5">
+<div class="container">
+<h2 class="text-center section-title mb-4">Our Services</h2>
+<div class="row g-4">
+
+<div class="col-md-4" data-aos="fade-up">
+<div class="card service-card text-center p-4 shadow">
+<h5>Web Development</h5>
+<p>Corporate websites, portals & SaaS platforms.</p>
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+<div class="card service-card text-center p-4 shadow">
+<h5>Enterprise Software</h5>
+<p>ERP, CRM, Automation & AI solutions.</p>
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+<div class="card service-card text-center p-4 shadow">
+<h5>Cloud Infrastructure</h5>
+<p>AWS, Azure, Google Cloud deployments.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="bg-light py-5">
+<div class="container">
+<h2 class="text-center section-title mb-4">Our Projects</h2>
+<div class="row g-4">
+
+<div class="col-md-3" data-aos="flip-left">
+<div class="card shadow">
+<img src="https://images.unsplash.com/photo-1557821552-17105176677c" class="project-img card-img-top">
+<div class="card-body text-center">E-Commerce Platform</div>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="flip-left" data-aos-delay="100">
+<div class="card shadow">
+<img src="https://www.shutterstock.com/image-vector/website-landing-page-hospital-doctors-260nw-1465274651.jpg" class="project-img card-img-top">
+<div class="card-body text-center">Hospital System</div>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="flip-left" data-aos-delay="200">
+<div class="card shadow">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyA302k36LToWAoOCeSrkunCoGebyNQ0On_w&s" class="project-img card-img-top">
+<div class="card-body text-center">School ERP</div>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="flip-left" data-aos-delay="300">
+<div class="card shadow">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" class="project-img card-img-top">
+<div class="card-body text-center">Corporate CRM</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Team -->
+<section id="team" class="py-5">
+<div class="container">
+<h2 class="text-center section-title mb-4">Leadership Team</h2>
+<div class="row text-center g-4">
+
+<div class="col-md-3" data-aos="zoom-in">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEV52zqlFLyBlL09YIZwwzO5LSg7QZzdcJg&s" class="rounded-circle team-img mb-2">
+<h6>CEO</h6>
+<p>Founder & Strategist</p>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+<img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle team-img mb-2">
+<h6>CTO</h6>
+<p>Technology Head</p>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+<img src="https://randomuser.me/api/portraits/men/65.jpg" class="rounded-circle team-img mb-2">
+<h6>Project Director</h6>
+<p>Operations Lead</p>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+<img src="https://randomuser.me/api/portraits/women/51.jpg" class="rounded-circle team-img mb-2">
+<h6>Lead Architect</h6>
+<p>System Design</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-primary text-white py-5">
+<div class="container">
+<h2 class="text-center section-title mb-4">Contact Us</h2>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<form data-aos="fade-up">
+<input class="form-control mb-3" placeholder="Full Name">
+<input class="form-control mb-3" placeholder="Email Address">
+<textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+<button class="btn btn-dark w-100">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+<p class="mb-0">© 2026 SID Solution | Enterprise IT Services Company</p>
+</footer>
+
+
+{% endblock content %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+</script>
+{% endblock js %}

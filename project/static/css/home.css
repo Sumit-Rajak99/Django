@@ -1,0 +1,143 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 100px 20px 60px;
+}
+
+.hero img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+/* Section Common */
+section {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6c757d;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+/* Cards */
+.service-card,
+.feature-card,
+.project-card,
+.process-card,
+.industry-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card:hover,
+.feature-card:hover,
+.project-card:hover,
+.process-card:hover,
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Systematic Images */
+.section-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Process Section */
+.process-grid,
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+}
+
+/* Industry Card */
+.industry-card {
+  font-weight: 600;
+}
+
+/* Innovation Section */
+.innovation-section {
+  background: #fff;
+  border-radius: 18px;
+  margin: 0 10px;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.feature-list li {
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+/* CTA */
+.cta-section {
+  background: linear-gradient(135deg,#0d6efd,#0b5ed7);
+  background-image:url(https://www.shutterstock.com/image-photo/business-people-handshake-successful-corporate-260nw-2421123259.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 90px 20px;
+  text-align: center;
+  border-radius: 18px;
+  margin: 60px 10px 0;
+}
+
+.cta-section a {
+  background: #fff;
+  color: #0d6efd;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-section a:hover {
+  background: #0b5ed7;
+  color: #fff;
+}
