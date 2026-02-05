@@ -1,0 +1,114 @@
+body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      line-height: 1.7;
+    }
+
+    
+    .hero {
+      background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+      background-image: url(https://img.freepik.com/free-vector/blue-background-banner-modern-design_677411-1531.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      padding: 150px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+
+
+    .service-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px 22px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s ease-in-out;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #e9f1ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 30px;
+      color: #0d6efd;
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      color: #6c757d;
+    }
+
+    .process-box, .why-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+
+    .stats {
+      background: #0d6efd;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .stats h3 {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    .tech span {
+      display: inline-block;
+      background: #fff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .footer {
+      background: #212529;
+      color: #adb5bd;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 14px;
+    }    
+

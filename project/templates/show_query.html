@@ -1,0 +1,67 @@
+ {% extends "base.html" %}
+{% load static %}
+ {% block title %}show_query{% endblock title %}
+ {% block css %}
+ 
+ {% endblock css %}
+
+ {% block content %}
+ 
+ 
+ 
+
+
+
+ <div class="table-responsive">
+  <table class="table table-bordered table-striped table-hover align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Query</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Edit / Delete /Admin_reply</th>
+        {% comment %} <th>Delete</th> {% endcomment %}
+
+        
+
+
+
+
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.Name }}</td>
+        <td>{{ i.Email }}</td>
+        <td>{{ i.Query }}</td>
+        <td>{{ i.Department }}</td>
+        <td>{{ i.Status }}</td>
+        {% if i.Admin_replay %}
+         <td>{{i.Admin_replay}}</td>
+        {% else %}
+
+        <td><a href="">Edit</a>/ <a href="">delete</a> </td>
+        {% comment %} <td></td> {% endcomment %}
+
+        {% endif %}
+        
+        
+
+
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+{% block js %}
+
+{% endblock js %}
+

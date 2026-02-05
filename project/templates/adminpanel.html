@@ -1,0 +1,500 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block title %}Admin Dashboard{% endblock title %}
+
+{% block css %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<style>
+    :root {
+    --sidebar-bg: linear-gradient(180deg, #0f172a, #020617);
+    --action-panel-bg: rgba(255, 255, 255, 0.75);
+    --main-bg: linear-gradient(135deg, #f8fafc, #eef2ff);
+    --accent: #6366f1;
+    --accent-glow: rgba(99,102,241,0.4);
+    --text-dark: #020617;
+    --danger: #ef4444;
+    --glass-border: rgba(255,255,255,0.4);
+}
+
+body {
+    background: var(--main-bg);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+/* MAIN CONTAINER */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 🔹 SIDEBAR */
+.nav-sidebar {
+    width: 90px;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    gap: 30px;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+}
+
+.nav-icon {
+    font-size: 22px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-icon:hover {
+    color: white;
+    transform: scale(1.15);
+}
+
+/* 🔹 ACTION PANEL */
+.action-panel {
+    width: 300px;
+    margin: 20px;
+    background: var(--action-panel-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 22px;
+    border: 1px solid var(--glass-border);
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.panel-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+/* ACTION ITEMS */
+.action-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 18px;
+    background: white;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: all 0.25s ease;
+    margin-bottom: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+.action-item span {
+    margin-right: 14px;
+    font-size: 22px;
+}
+
+.action-item:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateX(8px);
+    box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+/* LOGOUT */
+.logout-box {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.logout-box:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* 🔹 MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 35px;
+    overflow-y: auto;
+}
+
+/* INFO CARDS */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.info-data h1 {
+    font-size: 44px;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.info-data p {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.info-icon-large {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(135deg, #eef2ff, #c7d2fe);
+    color: var(--accent);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-icon-large span {
+    font-size: 36px;
+}
+
+/* TABLE */
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.content-table th {
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 700;
+}
+
+.content-table th,
+.content-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* FORM */
+.form-card {
+    background: white;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+    max-width: 850px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5f5;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+</style>
+{% endblock css %}
+
+{% block content %}
+
+<div class="dashboard-container">
+    
+    <div class="nav-sidebar">
+        <a href="?" class="nav-icon"><span class="material-icons-outlined" style="color: var(--accent); font-size: 35px;">grid_view</span></a>
+        <a href="#" class="nav-icon"><span class="material-icons-outlined">analytics</span></a>
+        <a href="#" class="nav-icon"><span class="material-icons-outlined">settings</span></a>
+    </div>
+
+    <div class="action-panel">
+        <h4 class="panel-title">Management</h4>
+        <a href="{% url 'add_employee'  %}" class="action-item"><span class="material-icons-outlined">person_add</span> Add Employee</a>
+        <a href="{% url 'all_employees'  %}" class="action-item"><span class="material-icons-outlined">groups</span> All Employees</a>
+        <a href="{% url 'add_department' %}" class="action-item"><span class="material-icons-outlined">domain</span> Add Department</a>
+        <!-- <a href="?action=all_departments" class="action-item"><span class="material-icons-outlined">account_tree</span> All Departments</a> -->
+        <a href="{% url 'all_departments' %}" class="action-item"><span class="material-icons-outlined">account_tree</span> All Departments</a>
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+        <h4 class="panel-title">Reports</h4>
+        <a href="{% url 'emp_query' %}" class="action-item"><span class="material-icons-outlined">description</span> Emp_query</a>
+        <a href="{% url 'logout' %}" class="action-item logout-box">
+            <span class="material-icons-outlined">logout</span> Logout
+        </a>
+    </div>
+
+    <main class="main-content">
+        {% if add_department %}
+            <div class="form-card">
+                <h2>Add New Department</h2>
+                <form action="{% url 'd_data' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group"><label>Department Name</label><input type="text" placeholder="e.g. Finance" name='d_name'></div>
+                    <div class="form-group"><label>Department Head</label><input type="text" placeholder="HOD Name" name='d_head'></div>
+                    <button type="submit" style="background: var(--accent); color: white; border: none; padding: 15px 40px; border-radius: 10px; cursor: pointer; font-weight: bold;">Create Department</button>
+                </form>
+            </div>
+        
+        {% elif all_department %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover align-middle text-center">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Department Name</th>
+                        <th>Department Head</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for i in depdata %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.d_name }}</td>
+                        <td>{{ i.d_head }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+        <!-- add employee star from here  -->
+        {% elif add_employee %}
+            <div class="container mt-4">
+                <div class="card shadow p-4">
+                    <h4 class="mb-3">Add Employee</h4>
+
+                    <form {% url 'Employee_data' %} method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% if messages %}
+                        {% for i in messages  %}
+                        {{i}}
+                        
+                        {% endfor %}
+                        
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label> Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Contact</label>
+                            <input type="tel" class="form-control" name="contact" required>
+                        </div>
+
+
+
+                        <div class="mb-3">
+                            <label>Department</label>
+                            <select class="form-select" name="dept" required>
+                                {% for i in dep %}
+                                    <option value="{{ i.d_name }}">{{ i.d_name }}</option>
+                                {% endfor %}
+                                
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Add Employee</button>
+
+                    </form>
+                </div>
+            </div>
+
+        {% elif all_employees %}
+            <div class="table-responsive mt-3">
+                <table class="table table-bordered table-striped table-hover align-middle text-center">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Department</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for i in data1 %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.email }}</td>
+                        <td>{{ i.contact }}</td>
+                        <td>{{ i.department }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% elif data1 %}
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white text-center">
+                <h5>Query Reply Form</h5>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'ad_reply' pk=data1.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" name="name" value="{{ data1.Name }}" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" value="{{ data1.Email}}" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <input type="text" class="form-control" name="department" value="{{ data1.Department}}" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                        <label class="form-label">Query</label>
+                        <textarea class="form-control" name="query" rows="2" value="{{ data1.Query}}" readonly>{{data1.Query}}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <input type="text" class="form-control" name="status" value="{{ data1.Status}}" readonly>
+                        
+                        </div>
+
+                        <div class="mb-3">
+                        <label class="form-label">Admin Reply</label>
+                        <textarea class="form-control" name="admin_reply" rows="3" placeholder="Enter reply"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        {% elif emp_query %}
+            <div class="container mt-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover align-middle text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Query</th>
+                                <th>Department</th>
+                                <th>Status</th>
+                                <th>Admin Reply</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in emp_query %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ i.Name }}</td>
+                                <td>{{ i.Email }}</td>
+                                <td>{{ i.Query }}</td>
+                                <td>{{ i.Department }}</td>
+                                <td>
+                                    <span class="badge 
+                                        {% if i.Status == 'Pending' %} bg-warning 
+                                        {% elif i.Status == 'Resolved' %} bg-success 
+                                        {% else %} bg-secondary {% endif %}">
+                                        {{ i.Status }}
+                                    </span>
+                                </td>
+                                <td> 
+                                {% if i.Admin_replay %}
+                                    {{i.Admin_replay}}
+                                {% else %}
+                                    <a href="{% url 'replay_query' pk=i.id %}" class="btn btn-sm btn-primary">
+                                        Reply
+                                    </a>
+                                {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        
+        
+            {% else %}
+                <div style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h2 style="color: var(--text-dark); margin: 0;">Admin Dashboard</h2>
+                        <p style="color: #64748b; margin: 5px 0 0 0;">Logged in as: <b>{{ data.email }}</b></p>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-data"><p>Total Employees</p><h1>452</h1></div>
+                        <div class="info-icon-large"><span class="material-icons-outlined">badge</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-data"><p>Total Departments</p><h1>12</h1></div>
+                        <div class="info-icon-large" style="background: #fff7ed; color: #f59e0b;"><span class="material-icons-outlined">account_tree</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-data"><p>On Leave Today</p><h1>08</h1></div>
+                        <div class="info-icon-large" style="background: #fef2f2; color: #ef4444;"><span class="material-icons-outlined">event_busy</span></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-data"><p>Pending Tasks</p><h1>15</h1></div>
+                        <div class="info-icon-large" style="background: #ecfdf5; color: #10b981;"><span class="material-icons-outlined">pending_actions</span></div>
+                    </div>
+                </div>
+    </main>
+</div>
+
+{% endif %}
+
+
+
+
+{% endblock content %}
