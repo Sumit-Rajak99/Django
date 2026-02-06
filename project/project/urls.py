@@ -40,14 +40,21 @@ urlpatterns = [
     path('newpassword/',views.newpassword,name='newpassword'),
     path('newpass/',views.newpass,name='newpass'),
     path('userpanel/',views.userpanel,name='userpanel'),
-    path('message/',views.message,name='message'),
     path('query/',views.query,name='query'),
-    path('show_query/',views.show_query,name='show_query'),
-    path('emp_query/',views.emp_query,name='emp_query'),
-    path('replay_query/<int:pk>/',views.replay_query,name='replay_query'),
-    path('replay_query/',views.rep_query,name='rep_query'),
-    path('ad_reply/<int:pk>/',views.ad_reply,name='ad_reply'),
-    path('logout1/',views.logout1,name='logout1'),
+    path('userpanel/show_query/',views.show_query,name='show_query'),
+    path('userpanel/emp_query/',views.emp_query,name='emp_query'),
+    path('adminpanel/replay_query/<int:pk>/',views.replay_query,name='replay_query'),
+    path('adminpanel/replay_query/',views.rep_query,name='rep_query'),
+    path('adminpanel/ad_reply/<int:pk>/',views.ad_reply,name='ad_reply'),
+    path('userpanel/edit_query/<int:pk>/',views.edit_query,name='edit_query'),
+    path('userpanel/update_query/<int:pk>/',views.update_query,name='update_query'), 
+    path('userpanel/delete_query/<int:pk>/',views.delete_query,name='delete_query'), 
+    path('userpanel/panding_query/',views.panding_query,name='panding_query'),
+    path('userpanel/done_query/',views.done_query,name='done_query'),
+     
+    
+    
+    
     
     
     
