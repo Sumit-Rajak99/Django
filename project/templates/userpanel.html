@@ -47,54 +47,248 @@
       <a href="#">Settings</a>
       <a href="{% url "query" %}">Query</a>
       <a href="{% url "show_query" %}">Show Query</a>
-      <a href="#">Show padding Query</a>
-      <a href="#">Show done Query</a>
-      <a href="{% url "message" %}">Messages</a>
+      <a href="{% url "panding_query" %}"> Padding Query</a>
+      <a href="{% url "done_query" %}"> Done Query</a>
+      
       <a href="{% url "logout" %}">Logout</a>
     </div>
 
     <!-- Main Content -->
     <div class="col-md-9 col-lg-10 p-4">
-      
-          
+      {% if data1 %}
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover align-middle text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Query</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Edit / Delete /Admin_reply</th>
+                {% comment %} <th>Delete</th> {% endcomment %}
+              </tr>
+            </thead>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">All Query</h5>
-              {% for i in show_query %}
-                <p class="card-text">
-              {{ forloop.counter }}
-                </p>
-{% endfor %}
+            <tbody>
+              {% for i in data1 %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.Name }}</td>
+                <td>{{ i.Email }}</td>
+                <td>{{ i.Query }}</td>
+                <td>{{ i.Department }}</td>
+                <td>{{ i.Status }}</td>
+                {% if i.Admin_replay %}
+                <td>{{i.Admin_replay}}</td>
+                {% else %}
 
-              <a href="#" class="btn btn-primary btn-sm">View</a>
-            </div>
-          </div>
+                <td><a href="{% url 'edit_query' pk=i.id %}">Edit</a> / <a href="{% url 'delete_query' pk=i.id %}">delete</a> </td>
+                {% comment %} <td></td> {% endcomment %}
+
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
+      {% elif data2 %}
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                  <h3>Update Form</h3>
+                <form action="{% url 'update_query' pk=data2.id %}" method="post">
+                  {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" value={{data2.Name}} readonly class="form-control" placeholder="Enter your name">
+                    </div>
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Done Querys</h5>
-              <p class="card-text">0</p>
-              <a href="#" class="btn btn-success btn-sm">Open</a>
-            </div>
-          </div>
-        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" value={{data2.Email}} readonly class="form-control" placeholder="Enter your email">
+                    </div>
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Pending Querys</h5>
-              <p class="card-text">0</p>
-              <a href="#" class="btn btn-warning btn-sm">Check</a>
+                    <div class="mb-3">
+                        <label class="form-label">Query</label>
+                        <input type="text" name="query" value={{data2.Query}}  class="form-control" placeholder="Enter your query">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <input type="text" name="department" value={{data2.Department}} readonly class="form-control" placeholder="Enter department">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+
             </div>
-          </div>
         </div>
       </div>
+      
 
+      {% elif query %}
+      <form action="{% url 'query' %}" method="post" class="container mt-4">
+
+      {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Enter your name" value="{{data.name}}" readonly>
+        </div>
+
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" value="{{data.email}}" readonly>
+        </div>
+
+      <div class="mb-3">
+        <label class="form-label">Query</label>
+        <input type="text" name="query" class="form-control" placeholder="Enter your query">
+      </div>
+
+     <div class="mb-3">
+     <label class="form-label">Department</label>
+    
+      <select class="form-select" name="department" required>
+       {% for i in query %}
+         <option value="{{ i.d_name }}">{{ i.d_name }}</option>
+        {% endfor %}
+                    
+         </select>
+  </div>
+
+      <button type="submit" class="btn btn-primary">
+        Submit Query
+      </button>
+
+      </form>
+
+      {% elif panding_query %}
+      <div class="table-responsive">
+
+          <table class="table table-bordered table-striped table-hover align-middle text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Query</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Edit / Delete </th>
+                {% comment %} <th>Delete</th> {% endcomment %}
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for i in panding_query %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.Name }}</td>
+                <td>{{ i.Email }}</td>
+                <td>{{ i.Query }}</td>
+                <td>{{ i.Department }}</td>
+                <td>{{ i.Status }}</td>
+                {% if i.Admin_replay %}
+                <td>{{i.Admin_replay}}</td>
+                {% else %}
+
+                <td><a href="{% url 'edit_query' pk=i.id %}">Edit</a> / <a href="{% url 'delete_query' pk=i.id %}">delete</a> </td>
+                {% comment %} <td></td> {% endcomment %}
+
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      
+      {% elif done_query %}
+      <div class="table-responsive">
+
+          <table class="table table-bordered table-striped table-hover align-middle text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Query</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>admin_reply </th>
+                {% comment %} <th>Delete</th> {% endcomment %}
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for i in done_query %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.Name }}</td>
+                <td>{{ i.Email }}</td>
+                <td>{{ i.Query }}</td>
+                <td>{{ i.Department }}</td>
+                <td>{{ i.Status }}</td>
+                {% if i.Admin_replay %}
+                <td>{{i.Admin_replay}}</td>
+                {% else %}
+
+                <td><a href="{% url 'edit_query' pk=i.id %}">Edit</a> / <a href="{% url 'delete_query' pk=i.id %}">delete</a> /admin_reply </td>
+                {% comment %} <td></td> {% endcomment %}
+
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      
+        {% else %}
+      
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">All Query</h5>
+                {% for i in userdata %}
+                  <p class="card-text">
+                      {{ forloop.counter }}
+                  </p>
+                {% endfor %}
+
+                <a href="#" class="btn btn-primary btn-sm">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Done Querys</h5>
+                <p class="card-text">0</p>
+                <a href="#" class="btn btn-success btn-sm">Open</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Pending Querys</h5>
+                <p class="card-text">0</p>
+                <a href="#" class="btn btn-warning btn-sm">Check</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        {% endif %}
+      
+
+    </div>
           
       <!-- Stats Section -->
       

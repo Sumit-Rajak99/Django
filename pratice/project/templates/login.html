@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock title %}
+
+{% block css %}
+<style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2) !important;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .login-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 420px;
+      margin: 80px auto;
+    }
+
+    .login-card h3 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      height: 45px;
+      border-radius: 8px;
+    }
+
+    .btn-login {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      height: 45px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .btn-login:hover {
+      opacity: 0.9;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+
+<div class="login-card">
+  <h3>Login</h3>
+
+  <form method="POST" action='{% url "adminpanel" %}'>
+    {% csrf_token %}
+
+    <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" required>
+
+    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+
+    <button type="submit" class="btn btn-login w-100">Login</button>
+
+    <p class="text-center mt-3 mb-0">
+      Don't have an account?
+      <a href="{% url 'Register' %}" class="fw-semibold text-decoration-none">Register</a>
+    </p>
+  </form>
+
+</div>
+
+{% endblock content %}
