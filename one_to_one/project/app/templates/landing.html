@@ -1,0 +1,90 @@
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-4">
+
+    <!-- Links -->
+    <div class="mb-3">
+        <a href="{% url 'forword_access' %}" class="btn btn-primary me-2">
+            Forward Access
+        </a>
+
+        <a href="{% url 'reverse_access' %}" class="btn btn-secondary">
+            Reverse Access
+        </a>
+    </div>
+
+    <!-- Table -->
+     <!-- {{stu_data}} -->
+    {% if stu_data %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>city</th>
+
+                    <th>Aadhar No</th>
+                    <th>Aadhar Created By</th>
+                    <th>Aadhar Created Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in stu_data  %}
+                <tr>
+                     <td>{{ forloop.counter }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.contact }}</td>
+                    <td>{{ i.city }}</td>
+
+                    <td>{{ i.aadhar_no }}</td>
+                    <!-- <td>{{ i.aadhar_no.aadhar_no }}</td> -->
+                    <td>{{ i.aadhar_no.create_by }}</td>
+                    <td>{{ i.aadhar_no.create_date }}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+    {% if a_data %}
+    <table class="table table-bordered table-striped table-hover align-middle text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>city</th>
+            <th>Aadhar No</th>
+            <th>Aadhar Created By</th>
+            <th>Aadhar Created Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in a_data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.xyz.name }}</td>
+            <td>{{ i.xyz.email }}</td>
+            <td>{{ i.xyz.contact }}</td>
+            <td>{{ i.xyz.city }}</td>
+            <td>{{ i.aadhar_no }}</td>
+            <td>{{ i.create_by }}</td>
+            <td>{{ i.create_date }}</td>
+        </tr>
+        
+        {% endfor %}
+    </tbody>
+</table>
+{% endif%}

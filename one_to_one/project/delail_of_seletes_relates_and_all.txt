@@ -1,0 +1,26 @@
+stu_data=Student.objects.select_related('aadhar_no') (For n-objects 1 query executed)
+SELECT "app_student"."id", 
+	"app_student"."name", 
+	"app_student"."email", 
+	"app_student"."contact", 
+	"app_student"."city", 
+	"app_student"."aadhar_no_id", 
+	"app_aadhar"."id", 
+	"app_aadhar"."aadhar_no",
+	 "app_aadhar"."create_date", 
+	"app_aadhar"."create_by" FROM "app_student" INNER JOIN "app_aadhar" ON ("app_student"."aadhar_no_id" = "app_aadhar"."id")
+[<Student: Student object (1)>, 
+ <Student: Student object (2)>, 
+ <Student: Student object (3)>]
+
+
+Student.objects.all() (For n-objects N+1 query executed)
+[<Student: Student object (1)>, 
+ <Student: Student object (2)>, 
+ <Student: Student object (3)>]
+SELECT "app_student"."id", 
+	"app_student"."name", 
+	"app_student"."email", 
+	"app_student"."contact", 
+	"app_student"."city", 
+	"app_student"."aadhar_no_id" FROM "app_student"
