@@ -1,0 +1,19 @@
+{% comment %} {{data}} {% endcomment %}
+<form method='POST' novalidate>
+    {% csrf_token %}
+    {% comment %} {{data}}  {% endcomment %}
+    <label for="">name</label> {{data.name}} <br>
+    <p style="color: red;">{{data.name.error}}</p>
+    <label for="">email</label> {{data.email}} <br>
+    <p style="color: red;">{{data.email.error}}</p>
+
+    <label for="">age</label> {{data.age}} <br>
+    <p style="color: red;">{{data.age.error}}</p>
+
+    <label for="">city</label> {{data.city}} <br>
+    <p style="color: red;">{{data.city.error}}</p>
+
+
+    <p></p>
+    <input type="submit">
+</form>
